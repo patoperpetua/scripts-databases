@@ -75,7 +75,7 @@ if [ "$(docker ps -aq -f name="${CONTAINER_NAME}")" ]; then
     PASSWORD=$(docker inspect -f "{{ .Config.Env }}" "${CONTAINER_NAME}" | sed 's/MYSQL_ROOT_PASSWORD=//' | cut -d ' ' -f2)
 else
     # shellcheck disable=SC2143
-    if [ ! -z "$(netstat -lntu | grep "${DEFAULT_PORT}")" ]; then
+    if [ -n "$(netstat -lntu | grep "${DEFAULT_PORT}")" ]; then
         echo "ERROR: Port already taken."
         exit 1
     fi
