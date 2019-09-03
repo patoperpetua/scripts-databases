@@ -1,0 +1,8 @@
+include:
+  - project: 'singletonsd/pipelines/common'
+    file: '/src/.gitlab-ci-scripts.yml'
+
+stages:
+  - test
+  - build
+  - deploy
