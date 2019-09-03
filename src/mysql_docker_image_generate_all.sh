@@ -55,7 +55,7 @@ else
     fi
 fi
 
-for filename in ${FOLDER}/*.sql; do
+for filename in "${FOLDER}"/*.sql; do
     filename=$(basename -- "$filename")
     filename="${filename%.*}"
     tag=${filename#"mysql-"}
