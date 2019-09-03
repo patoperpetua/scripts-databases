@@ -50,7 +50,7 @@ do
 done
 
 if [ -d "${FOLDER}" ]; then
-    for filename in ${FOLDER}/mysql*.sql; do
+    for filename in "${FOLDER}"/mysql*.sql; do
         if [ -f "${filename}" ]; then
             rm "${filename}"
         fi
